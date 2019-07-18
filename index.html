@@ -84,6 +84,7 @@
 <button onclick="timeLookUp()">Time Look Up</button>
 <script type="text/javascript">
 function timeLookUp(){
+  var percent ["90%", "85%", "80%", "75%"];
   var time = prompt("Enter 5k time");
   if(time == "15:25")
     var times = ["5:22", "5:40", "6:00", "6:28"];
@@ -97,7 +98,13 @@ function timeLookUp(){
     var row = document.createElement("tr");
     for(var j=0;j<4;j++){
       var cell = document.createElement("td");
-      var cellText = document.createTextNode(times[j]);
+      var cellText
+      if(i==0){
+        cellText = document.createTextNode(percent[j]);
+      }
+      if(i==1){
+      cellText = document.createTextNode(times[j]);
+      }
       cell.appendChild(cellText);
       row.appendChild(cell);
     }
